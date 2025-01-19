@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('low-angle-shot-strings-light-bulbs-attached-pole-front-park-pavilion-dusk.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            animation: fadeIn 1.5s ease-in-out;
+            overflow-x: hidden;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+      header .logo {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd700;
+    letter-spacing: 2px;
+    font-family: 'Arial', sans-serif;
+    animation: logoFadeIn 2s ease-out;
+}
+
+@keyframes logoFadeIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+header .logo span {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.8) rotate(10deg);
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+.logo span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.logo span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.logo span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.logo span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.logo span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.logo span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.logo span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+.logo span:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+.logo span:nth-child(9) {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(10deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+
+header .logo img {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px; /* Space between logo and text */
+    border-radius: 5px; /* Optional: rounded edges */
+}
+
+
+        main {
+            padding: 3rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+            color: #f5c518;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: slideInDown 1s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .quote {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffd700;
+            font-size: 1.3rem;
+            font-style: italic;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Gallery Section */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .gallery-item {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: calc(30% - 10px);
+            height: 250px;
+        }
+
+        .gallery-item:nth-child(odd) {
+            transform: translateY(30px);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.1) translateY(0);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.8);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: calc(45% - 10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                width: calc(100% - 10px);
+            }
+        }
+
+        /* Beautiful Description Section */
+        .description-container {
+            background: rgba(0, 0, 0, 0.7); /* Slight opacity */
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .description {
+            font-family: 'Georgia', cursive;
+            color: #fff; /* White color for the text */
+            font-size: 1.5rem;
+            line-height: 1.8;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .description h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        /* Additional Gallery Section */
+        .additional-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .additional-gallery .gallery-item {
+            width: calc(25% - 10px);
+            height: 200px;
+            border: 0px solid #ffd700;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .additional-gallery .gallery-item {
+                width: calc(45% - 10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .additional-gallery .gallery-item {
+                width: calc(100% - 10px);
+            }
+        }
+
+
+        /* Call and Book Now Button */
+        .call-book-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .call-book-button {
+            background: #ffd700;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            color: #000;
+            font-weight: bold;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .call-book-button:hover {
+            background: #ffcc00;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+        
+         @media (max-width: 768px) {
+            .gallery-item {
+                width: calc(45% - 10px);
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                width: calc(100% - 10px);
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .quote {
+                font-size: 1rem;
+            }
+        }
+
+        /* Beautiful Description Section */
+        .description-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .description {
+            font-family: 'Georgia', cursive;
+            color: #fff;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .description h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        @media (max-width: 768px) {
+            .description h2 {
+                font-size: 1.5rem;
+            }
+
+            .description {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .description h2 {
+                font-size: 1.2rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+        }
+
+        /* Call and Book Now Button */
+        .call-book-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .call-book-button {
+            background: #ffd700;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            color: #000;
+            font-weight: bold;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .call-book-button:hover {
+            background: #ffcc00;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 480px) {
+            .call-book-container {
+                top: 10px;
+                right: 10px;
+            }
+
+            .call-book-button {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                font-size: 0.8rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Picsart_25-01-13_23-10-08-706.jpg" alt="EventEase Logo">
+           <span>E</span>
+        <span>v</span>
+        <span>e</span>
+        <span>n</span>
+        <span>t</span>
+        <span>E</span>
+        <span>a</span>
+        <span>s</span>
+        <span>e</span>
+        </div>
+
+    </header>
+
+    <main>
+        <h1>Event Gallery</h1>
+        <div class="quote">"Creating memories that last a lifetime"</div>
+
+        <!-- Gallery Section -->
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="musical-instruments-party.jpg" alt="Event 1">
+            </div>
+            <div class="gallery-item">
+                <img src="crowd-people-with-raised-arms-having-fun-music-festival-by-night.jpg" alt="Event 2">
+            </div>
+            <div class="gallery-item">
+                <img src="navratri-highly-detailed-candle-decoration (1).jpg" alt="Event 3">
+            </div>
+            <div class="gallery-item">
+                <img src="people-having-fun-wedding-hall.jpg" alt="Event 4">
+            </div>
+            <div class="gallery-item">
+                <img src="beautiful-photozone-with-big-wreath-decorated-with-greenery-roses-centerpiece-candles-sides-garland-hanged-trees.jpg" alt="Event 5">
+            </div>
+            <div class="gallery-item">
+                <img src="navratri-highly-detailed-candle-decoration.jpg" alt="Event 6">
+            </div>
+            <div class="gallery-item">
+                <img src="cake-cake-are-table-with-cake-cake-it.jpg" alt="Event 7">
+            </div>
+            <div class="gallery-item" style="align-self: flex-start;">
+                <img src="tall-vases-with-white-candles-stand-shiny-branches.jpg" alt="Event 8">
+            </div>
+        </div>
+
+        <!-- Beautiful Description Section -->
+        <div class="description-container">
+            <div class="description">
+                <h2>Welcome to EventEase – Your One-Stop Event Rental Solution!</h2>
+                <p>
+                    Planning a birthday party, a grand stage show, or the wedding of your dreams? At EventEase, we make your event planning stress-free and exciting! Whether you're looking for elegant decorations, stunning stage setups, or all the accessories you need to bring your vision to life, we have everything you need – and more – available for rent.
+                </p>
+                <p>
+                    Our extensive collection includes a variety of rental products that will add that perfect touch to your event, no matter the size or occasion. From elegant floral arrangements to lighting, furniture, and stage props, we’ve got you covered!
+                </p>
+                <p>
+                    <strong>Curious about pricing and product availability?</strong> Feel free to reach out to us today, and we’ll guide you through our extensive rental options. Let us help you create memories that last a lifetime.
+                </p>
+            </div>
+        </div>
+
+         <!-- Additional Gallery Section -->
+        <div class="additional-gallery">
+            <div class="gallery-item">
+                <img src="beautiful-decor-wedding-day.jpg" alt="Event 9">
+            </div>
+            <div class="gallery-item">
+                <img src="traditional-islamic-ramadan-lantern-trees-park-sultan-ahmet-square-near-blue-mosque-istanbul-turkey.jpg" alt="Event 10">
+            </div>
+            <div class="gallery-item">
+                <img src="chandelier-with-flowers-greenery-hangs-dinner-table.jpg" alt="Event 11">
+            </div>
+            <div class="gallery-item">
+                <img src="beautiful-flowers-bloom-ladder.jpg" alt="Event 12">
+            </div>
+            <div class="gallery-item">
+                <img src="view-lamps-inside-suleymaniye-mosque-istanbul-turkey.jpg" alt="Event 13">
+            </div>
+            <div class="gallery-item">
+                <img src="rose-petals-cover-green-garden-ready-traditional-hindu-weddi.jpg" alt="Event 14">
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Call and Book Now Buttons -->
+    <div class="call-book-container">
+        <a href="tel:+918590692054" class="call-book-button">Call Us</a>
+        <a href="tel:+918590692054" class="call-book-button">Book Now</a>
+    </div>
+
+    <footer>
+        EventEase
+    </footer>
+</body>
+</html>

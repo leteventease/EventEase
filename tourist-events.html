@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('girls-enjoying-nature-red-tent.jpg') no-repeat center center / cover;
+            color: #f9f9f9;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+        }
+
+      header .logo {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd700;
+    letter-spacing: 2px;
+    font-family: 'Arial', sans-serif;
+    animation: logoFadeIn 2s ease-out;
+}
+
+@keyframes logoFadeIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+header .logo span {
+    display: inline-block;
+    opacity: 0;
+    transform: scale(0.8) rotate(10deg);
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+.logo span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.logo span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.logo span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.logo span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.logo span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.logo span:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+.logo span:nth-child(7) {
+    animation-delay: 0.6s;
+}
+
+.logo span:nth-child(8) {
+    animation-delay: 0.7s;
+}
+
+.logo span:nth-child(9) {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(10deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+header .logo img {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px; /* Space between logo and text */
+    border-radius: 5px; /* Optional: rounded edges */
+}
+
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        header nav ul li a {
+            color: #f9f9f9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        #hero {
+            text-align: center;
+            padding: 6rem 1rem;
+            background: url('.jpg');
+            color: #fff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+        }
+
+        #locations {
+            padding: 4rem 2rem;
+            background: url('girls-enjoying-nature-red-tentt.jpg') no-repeat center center / cover;
+            border-radius: 20px;
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 1200px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        #locations h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #ffd700;
+            letter-spacing: 2px;
+        }
+
+        .grid {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            position: relative;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+            width: 300px;
+            height: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--card-bg) no-repeat center center / cover;
+            filter: brightness(0.5);
+            z-index: 1;
+            transition: filter 0.3s ease;
+        }
+
+        .card:hover::before {
+            filter: brightness(0.8);
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+            color: #f9f9f9;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.8);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            color: #f9f9f9;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .fade-in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            #hero h1 {
+                font-size: 2rem;
+            }
+
+            #hero p {
+                font-size: 1rem;
+            }
+
+            #locations h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 80px;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            header nav ul li a {
+                font-size: 0.9rem;
+            }
+
+            #hero h1 {
+                font-size: 1.8rem;
+            }
+
+            #hero p {
+                font-size: 0.9rem;
+            }
+
+            #locations h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Picsart_25-01-13_23-10-08-706.jpg" alt="EventEase Logo">
+            <span>E</span>
+        <span>v</span>
+        <span>e</span>
+        <span>n</span>
+        <span>t</span>
+        <span>E</span>
+        <span>a</span>
+        <span>s</span>
+        <span>e</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tourist-events.html">Tourist Events</a></li>
+                <li><a href="create-event.html">Create Event</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Discover Tourist Events</h1>
+            <p>Exciting events happening at your favorite destinations!</p>
+        </section>
+
+        <section id="locations">
+            <h2>Popular Tourist Locations</h2>
+            <div class="grid">
+                <div class="card fade-scroll" style="--card-bg: url('ooty.jpg')">
+                    <div class="card-content">
+                        <h3>Currently Unavailable</h3>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="card fade-scroll" style="--card-bg: url('goa.jpg')">
+                    <div class="card-content">
+                        <h3>Currently Unavailable</h3>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="card fade-scroll" style="--card-bg: url('jaipur.jpg')">
+                    <div class="card-content">
+                        <h3>Currently Unavailable</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>EventEase</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-scroll');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-view');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            fadeElements.forEach(element => observer.observe(element));
+        });
+    </script>
+</body>
+</html>
